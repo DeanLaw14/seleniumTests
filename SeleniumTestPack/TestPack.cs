@@ -10,25 +10,8 @@ using System.Threading.Tasks;
 namespace SeleniumTestPack
 {
     [TestFixture]
-    public class TestPack
+    public class TestPack : TestBase
     {
-        private IWebDriver _driver;
-
-        [OneTimeSetUp]
-        public void BeforeTestRun()
-        {
-            _driver = new ChromeDriver();
-            _driver.Manage().Window.Maximize();
-            _driver.Manage().Cookies.DeleteAllCookies();
-        }
-
-        [OneTimeTearDown]
-        public void AfterTestRun()
-        {
-            _driver.Dispose();
-            _driver.Close();
-        }
-
         [Test]
         public void SampleTest()
         {
